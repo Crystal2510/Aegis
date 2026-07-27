@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+
+  html,
+  body,
+  #root {
+    height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply antialiased text-[#111111];
+    font-family: 'Inter', sans-serif;
+  }
+
+  * {
+    border-radius: 0px !important;
+    /* Strict no border radius, will selectively override up to 4px via inline if needed, or allow TW utilities if we remove !important. The prompt says 'no border-radius > 4px anywhere'. So we can just not use large radius classes. */
+  }
+}
+
+/* Custom scrollbar hidden on panels if required, but default to minimal */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+}
+
+/* 
+ * Background texture: ledger paper feel 
+ * 1px horizontal line every 40px
+ */
+.ledger-bg {
+  background-image: repeating-linear-gradient(to bottom,
+      transparent,
+      transparent 39px,
+      #f0f0f0 39px,
+      #f0f0f0 40px);
+  background-color: #ffffff;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes march {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.animate-march {
+  animation: march 1s linear infinite;
+}

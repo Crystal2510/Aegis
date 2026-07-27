@@ -1,0 +1,18 @@
+{
+  "persona_id": "dossier_upload_1784807981",
+  "fraudulent": false,
+  "techniques": [],
+  "outputs": {
+    "kyc_soft_copy": "kyc.jpg",
+    "cheque_soft_copy": "cheque.jpg",
+    "ca_certificate_soft_copy": "ca_certificate.jpg",
+    "itr_soft_copy": "itr.jpg"
+  },
+  "documents_rendered": [
+    "kyc",
+    "cheque",
+    "ca_certificate",
+    "itr"
+  ],
+  "purpose": "Folder Upload"
+}

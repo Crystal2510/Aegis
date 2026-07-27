@@ -1,0 +1,32 @@
+{
+  "persona_id": "dossier_upload_1784866186",
+  "fraudulent": false,
+  "techniques": [],
+  "outputs": {
+    "idcard_soft_copy": "idcard.jpg",
+    "kyc_soft_copy": "kyc.jpg",
+    "salary_soft_copy": "salary.jpg",
+    "death_certificate_soft_copy": "death_certificate.jpg",
+    "rent_soft_copy": "rent.jpg",
+    "occupancy_cert_soft_copy": "occupancy_cert.jpg",
+    "plan_approval_soft_copy": "plan_approval.jpg",
+    "itr_soft_copy": "itr.jpg",
+    "legal_heir_soft_copy": "legal_heir.jpg",
+    "cheque_soft_copy": "cheque.jpg",
+    "appointment_soft_copy": "appointment.jpg"
+  },
+  "documents_rendered": [
+    "idcard",
+    "kyc",
+    "salary",
+    "death_certificate",
+    "rent",
+    "occupancy_cert",
+    "plan_approval",
+    "itr",
+    "legal_heir",
+    "cheque",
+    "appointment"
+  ],
+  "purpose": "Folder Upload"
+}

@@ -1,0 +1,20 @@
+{
+  "persona_id": "dossier_upload_1784826573",
+  "fraudulent": false,
+  "techniques": [],
+  "outputs": {
+    "ca_certificate_soft_copy": "ca_certificate.jpg",
+    "kyc_soft_copy": "kyc.jpg",
+    "salary_soft_copy": "salary.jpg",
+    "roc_certificate_soft_copy": "roc_certificate.jpg",
+    "nri_bank_soft_copy": "nri_bank.jpg"
+  },
+  "documents_rendered": [
+    "ca_certificate",
+    "kyc",
+    "salary",
+    "roc_certificate",
+    "nri_bank"
+  ],
+  "purpose": "Folder Upload"
+}

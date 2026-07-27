@@ -1,0 +1,2325 @@
+{
+  "dossier_id": "demo_dossier_A",
+  "fraudulent": true,
+  "risk_score": 0.65,
+  "n_documents": 11,
+  "n_flagged": 5,
+  "techniques": [
+    "Cross-Document Semantic Mismatch (Designation Drift \u00e2\u20ac\u201d ID Card vs Salary/Appointment)",
+    "Salary Mathematical Impossibility (Net Pay Exceeds Gross by 3x)",
+    "Cheque Figures vs Words Mismatch (4.2x Inflation \u00e2\u20ac\u201d Numeral Splicing)",
+    "Cross-Document Address Mismatch (KYC/ID Card vs Rent Agreement)",
+    "ITR vs Salary Income Discrepancy (3.8x \u00e2\u20ac\u201d Possible Income Inflation)",
+    "Rent-to-Income Ratio Anomaly (70% \u00e2\u20ac\u201d Exceeds 50% Threshold)"
+  ],
+  "processing_time_ms": 76437.10660934448,
+  "analyzed_at": "2026-07-24 02:04:14.844899",
+  "ground_truth_fraudulent": true,
+  "documents": [
+    {
+      "doc_name": "kyc",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 2.8631206987483893e-06,
+      "visual_flagged": false,
+      "tier_a_flagged": false,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "full_name": "Siddharth Subramaniam",
+        "dob": "1981-03-03",
+        "gender": "Male",
+        "aadhaar": "",
+        "pan": "VVPPS9239K",
+        "address": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+        "phone": "9870191075",
+        "email": "siddharth subramaniam@yahoo.com",
+        "__metadata__": {
+          "producer": "Aadhaar Enabled Payment System (AEPS)",
+          "creator": "Unique Identification Authority of India (UIDAI)",
+          "severity": "OK",
+          "status_note": "Aadhaar system-generated PDF \u00e2\u20ac\u201d no editing software signatures.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": false,
+      "mask_url": "/masks/demo_dossier_A_kyc_soft_copy.png"
+    },
+    {
+      "doc_name": "salary",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.007983243092894554,
+      "visual_flagged": false,
+      "tier_a_flagged": true,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "full_name": "Siddharth Subramaniam",
+        "employee_code": "EMPB6965C",
+        "designation": "Associate Consultant",
+        "pan": "VVPPS9239K",
+        "net_pay": "226875.02",
+        "gross": "75859.05",
+        "total_deductions": "7106.61",
+        "employer_name": "ICICI Lombard",
+        "basic": "40560.58",
+        "hra": "20280.29",
+        "special_allowance": "2039.34",
+        "pf_deduction": "4867.27",
+        "tds_deduction": "8112.12",
+        "month": "July 2026",
+        "__metadata__": {
+          "producer": "SAP SuccessFactors Employee Central",
+          "creator": "SAP HCM Payroll Engine",
+          "severity": "OK",
+          "status_note": "Expected producer detected (SAP SuccessFactors) \u00e2\u20ac\u201d no anomalies.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": true,
+      "mask_url": "/masks/demo_dossier_A_salary_soft_copy.png"
+    },
+    {
+      "doc_name": "appointment",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.0019991914741694927,
+      "visual_flagged": false,
+      "tier_a_flagged": true,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "full_name": "Siddharth Subramaniam",
+        "employee_code": "EMPB6965C",
+        "designation": "Associate Consultant",
+        "annual_ctc": "3459174",
+        "employer_name": "ICICI Lombard",
+        "joining_date": "2022-12-10",
+        "__metadata__": {
+          "producer": "Microsoft Word",
+          "creator": "Microsoft Office Word 2016",
+          "severity": "CAUTION",
+          "status_note": "CAUTION: Producer 'microsoft word' does not match expected patterns for 'appointment' documents. Manual review recommended.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": "Document producer 'microsoft word' is atypical for 'appointment' documents. Acceptable for internal memos but verify with issuing authority.",
+          "action": "Cross-verify document with issuing authority's standard format. Request official letterhead version if available."
+        }
+      },
+      "flagged": true,
+      "mask_url": "/masks/demo_dossier_A_appointment_soft_copy.png"
+    },
+    {
+      "doc_name": "idcard",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.0005959944101050496,
+      "visual_flagged": false,
+      "tier_a_flagged": true,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "full_name": "Siddharth Subramaniam",
+        "designation": "Vice President",
+        "employee_code": "EMPB6965C",
+        "employer_name": "ICICI Lombard",
+        "address": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+        "__metadata__": {
+          "producer": "ID Card Printing System v2.4",
+          "creator": "SecureID Pro Enterprise",
+          "severity": "OK",
+          "status_note": "Expected producer detected (ID Card Printing System) \u00e2\u20ac\u201d no anomalies.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": true,
+      "mask_url": "/masks/demo_dossier_A_idcard_soft_copy.png"
+    },
+    {
+      "doc_name": "itr",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.0216874610632658,
+      "visual_flagged": false,
+      "tier_a_flagged": false,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "full_name": "Siddharth Subramaniam",
+        "pan": "VVPPS9239K",
+        "acknowledgement_number": "122154559047509",
+        "gross_total_income": "3459173",
+        "assessment_year": "2026-27",
+        "filing_date": "2026-04-28",
+        "tax_payable": "0",
+        "__metadata__": {
+          "producer": "Income Tax Department e-Filing Portal",
+          "creator": "NSDL e-Governance Infrastructure Limited",
+          "severity": "OK",
+          "status_note": "Government portal-generated PDF \u00e2\u20ac\u201d no editing software signatures.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": false,
+      "mask_url": "/masks/demo_dossier_A_itr_soft_copy.png"
+    },
+    {
+      "doc_name": "cheque",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.007709285244345665,
+      "visual_flagged": false,
+      "tier_a_flagged": false,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "account_holder_name": "Siddharth Subramaniam",
+        "account_number": "003117312199",
+        "amount_words": "Twenty Eight Thousand Eight Hundred Only",
+        "full_name": "Siddharth Subramaniam",
+        "amount_figures": "120960",
+        "cheque_number": "523047",
+        "bank_name": "Punjab National Bank",
+        "micr_code": "",
+        "ifsc_code": "PUNBOLASOLG",
+        "date": "20/09/2026",
+        "__metadata__": {
+          "producer": "ICICI Bank Cheque Printing System",
+          "creator": "Secure Print Engine v3.1",
+          "severity": "OK",
+          "status_note": "Expected producer detected (ICICI Bank Cheque Printing System) \u00e2\u20ac\u201d no anomalies.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": false,
+      "mask_url": "/masks/demo_dossier_A_cheque_soft_copy.png"
+    },
+    {
+      "doc_name": "rent",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.0013865814544260502,
+      "visual_flagged": false,
+      "tier_a_flagged": false,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "tenant_name": "Siddharth Subramaniam",
+        "landlord_name": "Ashok Deshmukh",
+        "monthly_rent": "53100",
+        "property_address": "Flat 12, Marine Drive, Mumbai, Maharashtra 400002",
+        "lease_start": "2026-07-22",
+        "lease_end": "2027-06-22",
+        "full_name": "Siddharth Subramaniam",
+        "__metadata__": {
+          "producer": "LegalDesk Document Services",
+          "creator": "Legal Document Automation Platform",
+          "severity": "OK",
+          "status_note": "Expected producer detected (LegalDesk) \u00e2\u20ac\u201d no anomalies.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": false,
+      "mask_url": "/masks/demo_dossier_A_rent_soft_copy.png"
+    },
+    {
+      "doc_name": "legal_heir",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.0037798259872943163,
+      "visual_flagged": false,
+      "tier_a_flagged": false,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "certificate_number": "LIIC/4541081",
+        "deceased_name": "Pooja Subramaniam",
+        "date_of_death": "24-Oct-2024",
+        "death_place": "Lucknow",
+        "applicant_name": "Siddharth Subramaniam",
+        "full_name": "Siddharth Subramaniam",
+        "__metadata__": {
+          "producer": "Municipal Corporation Document System",
+          "creator": "e-Governance Portal \u00e2\u20ac\u201d Government of Karnataka",
+          "severity": "OK",
+          "status_note": "Government portal-generated PDF \u00e2\u20ac\u201d no editing software signatures.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": false,
+      "mask_url": "/masks/demo_dossier_A_legal_heir_soft_copy.png"
+    },
+    {
+      "doc_name": "death_certificate",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.09753216058015823,
+      "visual_flagged": false,
+      "tier_a_flagged": false,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "registration_number": "L/2024/9146",
+        "deceased_name": "Pooja Subramaniam",
+        "deceased_gender": "Female",
+        "deceased_dob": "0o-Dec [V55",
+        "date_of_death": "24-Oct-2024",
+        "death_place": "Lucknow",
+        "father_or_husband_name": null,
+        "registration_date": "03-Nov-2024",
+        "applicant_name": "Siddharth Subramaniam",
+        "__metadata__": {
+          "producer": "Municipal Corporation Document System",
+          "creator": "e-Governance Portal \u00e2\u20ac\u201d Government of Uttar Pradesh",
+          "severity": "OK",
+          "status_note": "Government portal-generated PDF \u00e2\u20ac\u201d no editing software signatures.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": false,
+      "mask_url": "/masks/demo_dossier_A_death_certificate_soft_copy.png"
+    },
+    {
+      "doc_name": "plan_approval",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 8.58468956721481e-06,
+      "visual_flagged": false,
+      "tier_a_flagged": true,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "applicant_name": "Siddharth Subramaniam",
+        "plan_approval_no": "BF/7641/1/2023",
+        "sanction_date": "2023-09-12",
+        "project_name": "Golden Meadows",
+        "builder_name": "Sahyadri Constructions",
+        "project_address": "S.No. 48/1, Golden Meadows, Bengaluru, Karnataka 560103",
+        "flat_no": "B-215",
+        "__metadata__": {
+          "producer": "BBMP Plan Approval System",
+          "creator": "e-Governance Portal \u00e2\u20ac\u201d Bruhat Bengaluru Mahanagara Palike",
+          "severity": "OK",
+          "status_note": "Government portal-generated PDF \u00e2\u20ac\u201d no editing software signatures.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": true,
+      "mask_url": "/masks/demo_dossier_A_plan_approval_soft_copy.png"
+    },
+    {
+      "doc_name": "occupancy_cert",
+      "delivery_mode": "soft_copy",
+      "forged_prob": 0.0054344842210412025,
+      "visual_flagged": false,
+      "tier_a_flagged": true,
+      "tier_bd_flagged": false,
+      "ocr_fields": {
+        "applicant_name": "Siddharth Subramaniam",
+        "oc_no": "OC/7791/2026",
+        "plan_approval_no": "BP/3198/B/2023",
+        "completion_date": "2025-09-11",
+        "project_name": "Golden Meadows",
+        "builder_name": "Sahyadri Constructions",
+        "project_address": "S.No. 48/1, Golden Meadows, Bengaluru, Karnataka 560103",
+        "flat_no": "B-215",
+        "__metadata__": {
+          "producer": "BBMP Occupancy Certificate System",
+          "creator": "e-Governance Portal \u00e2\u20ac\u201d Bruhat Bengaluru Mahanagara Palike",
+          "severity": "OK",
+          "status_note": "Government portal-generated PDF \u00e2\u20ac\u201d no editing software signatures.",
+          "editing_software_detected": false,
+          "flagged_software": null,
+          "reason": null,
+          "action": null
+        }
+      },
+      "flagged": true,
+      "mask_url": "/masks/demo_dossier_A_occupancy_cert_soft_copy.png"
+    }
+  ],
+  "mismatches": [
+    {
+      "field": "address",
+      "doc_a": "kyc",
+      "doc_b": "rent",
+      "value_a": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+      "value_b": "<UNVERIFIED>",
+      "confidence": "low",
+      "confidence_a": 1.0,
+      "confidence_b": 0.0,
+      "mismatch_type": "unverified"
+    },
+    {
+      "field": "designation",
+      "doc_a": "salary",
+      "doc_b": "idcard",
+      "value_a": "Associate Consultant",
+      "value_b": "Vice President",
+      "confidence": "high",
+      "confidence_a": 1.0,
+      "confidence_b": 1.0,
+      "mismatch_type": "value_mismatch"
+    },
+    {
+      "field": "designation",
+      "doc_a": "appointment",
+      "doc_b": "idcard",
+      "value_a": "Associate Consultant",
+      "value_b": "Vice President",
+      "confidence": "high",
+      "confidence_a": 1.0,
+      "confidence_b": 1.0,
+      "mismatch_type": "value_mismatch"
+    },
+    {
+      "field": "address",
+      "doc_a": "idcard",
+      "doc_b": "rent",
+      "value_a": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+      "value_b": "<UNVERIFIED>",
+      "confidence": "low",
+      "confidence_a": 1.0,
+      "confidence_b": 0.0,
+      "mismatch_type": "unverified"
+    },
+    {
+      "field": "plan_approval_no",
+      "doc_a": "plan_approval",
+      "doc_b": "occupancy_cert",
+      "value_a": "BF/7641/1/2023",
+      "value_b": "BP/3198/B/2023",
+      "confidence": "high",
+      "confidence_a": 1.0,
+      "confidence_b": 1.0,
+      "mismatch_type": "value_mismatch"
+    }
+  ],
+  "pipeline_telemetry": {
+    "total_ms": 76437.1,
+    "per_doc_ms": 6948.8,
+    "vision_ms": 26753.0,
+    "ocr_ms": 15287.4,
+    "alignment_ms": 11465.6
+  },
+  "legal_timeline_checks": [
+    {
+      "check_type": "legal_heir_name_agreement",
+      "pass_verdict": true,
+      "label": "Legal Heir vs Death Certificate: Deceased Name Agreement",
+      "detail": "Death Cert: 'Pooja Subramaniam', Legal Heir: 'Pooja Subramaniam'",
+      "confidence": 1.0,
+      "formula": null,
+      "doc_a": "death_certificate",
+      "doc_b": "legal_heir",
+      "val_a": "Pooja Subramaniam",
+      "val_b": "Pooja Subramaniam"
+    },
+    {
+      "check_type": "sanction_plan_number_match",
+      "pass_verdict": false,
+      "label": "Occupancy Cert vs Plan Approval: Sanction Plan Number Match",
+      "detail": "Plan: 'BF/7641/1/2023', Occupancy: 'BP/3198/B/2023'",
+      "confidence": 0.95,
+      "formula": null,
+      "doc_a": "plan_approval",
+      "doc_b": "occupancy_cert",
+      "val_a": "BF/7641/1/2023",
+      "val_b": "BP/3198/B/2023"
+    },
+    {
+      "check_type": "death_date_cross_doc_agreement",
+      "pass_verdict": true,
+      "label": "Death Certificate vs Legal Heir: Date of Death Agreement",
+      "detail": "Death Cert: '24-Oct-2024', Legal Heir: '24-Oct-2024'",
+      "confidence": 0.9,
+      "formula": null,
+      "doc_a": "death_certificate",
+      "doc_b": "legal_heir",
+      "val_a": "24-Oct-2024",
+      "val_b": "24-Oct-2024"
+    },
+    {
+      "check_type": "construction_timeline_plausibility",
+      "pass_verdict": true,
+      "label": "Construction Timeline (Sanction -> Completion)",
+      "detail": "Sanction: 2023-09-12 (2023), Completion: 2025-09-11 (2025), Duration: 2yr",
+      "confidence": 0.95,
+      "formula": null,
+      "doc_a": "plan_approval",
+      "doc_b": "occupancy_cert",
+      "val_a": "2023",
+      "val_b": "2025"
+    }
+  ],
+  "entity_graph": {
+    "nodes": [
+      {
+        "id": "hub_name",
+        "label": "Applicant Name",
+        "node_type": "entity_hub",
+        "is_flagged": false
+      },
+      {
+        "id": "hub_pan",
+        "label": "PAN Number",
+        "node_type": "entity_hub",
+        "is_flagged": false
+      },
+      {
+        "id": "hub_inc",
+        "label": "Gross Income / Salary",
+        "node_type": "entity_hub",
+        "is_flagged": false
+      },
+      {
+        "id": "hub_prop",
+        "label": "Property / Address",
+        "node_type": "entity_hub",
+        "is_flagged": false
+      },
+      {
+        "id": "hub_deceased",
+        "label": "Deceased Name",
+        "node_type": "entity_hub",
+        "is_flagged": false
+      },
+      {
+        "id": "kyc",
+        "label": "KYC",
+        "node_type": "document",
+        "is_flagged": true
+      },
+      {
+        "id": "salary",
+        "label": "SALARY",
+        "node_type": "document",
+        "is_flagged": true
+      },
+      {
+        "id": "appointment",
+        "label": "APPOINTMENT",
+        "node_type": "document",
+        "is_flagged": true
+      },
+      {
+        "id": "idcard",
+        "label": "IDCARD",
+        "node_type": "document",
+        "is_flagged": true
+      },
+      {
+        "id": "itr",
+        "label": "ITR",
+        "node_type": "document",
+        "is_flagged": false
+      },
+      {
+        "id": "cheque",
+        "label": "CHEQUE",
+        "node_type": "document",
+        "is_flagged": false
+      },
+      {
+        "id": "rent",
+        "label": "RENT",
+        "node_type": "document",
+        "is_flagged": true
+      },
+      {
+        "id": "legal_heir",
+        "label": "LEGAL HEIR",
+        "node_type": "document",
+        "is_flagged": false
+      },
+      {
+        "id": "death_certificate",
+        "label": "DEATH CERTIFICATE",
+        "node_type": "document",
+        "is_flagged": false
+      },
+      {
+        "id": "plan_approval",
+        "label": "PLAN APPROVAL",
+        "node_type": "document",
+        "is_flagged": true
+      },
+      {
+        "id": "occupancy_cert",
+        "label": "OCCUPANCY CERT",
+        "node_type": "document",
+        "is_flagged": true
+      }
+    ],
+    "edges": [
+      {
+        "source": "kyc",
+        "target": "hub_name",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "salary",
+        "target": "hub_inc",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "appointment",
+        "target": "hub_name",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "idcard",
+        "target": "hub_inc",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "itr",
+        "target": "hub_inc",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "cheque",
+        "target": "hub_inc",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "rent",
+        "target": "hub_prop",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "legal_heir",
+        "target": "hub_deceased",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "death_certificate",
+        "target": "hub_deceased",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "plan_approval",
+        "target": "hub_prop",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "occupancy_cert",
+        "target": "hub_prop",
+        "edge_type": "entity_link",
+        "field": null,
+        "value_a": null,
+        "value_b": null,
+        "confidence": null
+      },
+      {
+        "source": "kyc",
+        "target": "rent",
+        "edge_type": "mismatch_conflict",
+        "field": "address",
+        "value_a": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+        "value_b": "<UNVERIFIED>",
+        "confidence": "low"
+      },
+      {
+        "source": "salary",
+        "target": "idcard",
+        "edge_type": "mismatch_conflict",
+        "field": "designation",
+        "value_a": "Associate Consultant",
+        "value_b": "Vice President",
+        "confidence": "high"
+      },
+      {
+        "source": "appointment",
+        "target": "idcard",
+        "edge_type": "mismatch_conflict",
+        "field": "designation",
+        "value_a": "Associate Consultant",
+        "value_b": "Vice President",
+        "confidence": "high"
+      },
+      {
+        "source": "idcard",
+        "target": "rent",
+        "edge_type": "mismatch_conflict",
+        "field": "address",
+        "value_a": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+        "value_b": "<UNVERIFIED>",
+        "confidence": "low"
+      },
+      {
+        "source": "plan_approval",
+        "target": "occupancy_cert",
+        "edge_type": "mismatch_conflict",
+        "field": "plan_approval_no",
+        "value_a": "BF/7641/1/2023",
+        "value_b": "BP/3198/B/2023",
+        "confidence": "high"
+      }
+    ]
+  },
+  "math_findings": [
+    {
+      "document": "salary",
+      "check_name": "gross_net_deduction_balance",
+      "expected": 68752.44,
+      "actual": 226875.02,
+      "delta": 158122.58,
+      "passed": false,
+      "detail": "Salary: Gross Rs.75,859.05 - Deductions Rs.7,106.61 = expected Net Rs.68,752.44, got Rs.226,875.02. MISMATCH Rs.158,122.58",
+      "formula_steps": [
+        {
+          "label": "Gross Salary (G)",
+          "value": "Rs.75,859",
+          "highlight": false
+        },
+        {
+          "label": "Total Deductions (D)",
+          "value": "Rs.7,107",
+          "highlight": false
+        },
+        {
+          "label": "Expected Net: G - D",
+          "value": "Rs.75,859 - Rs.7,107 = Rs.68,752",
+          "highlight": false
+        },
+        {
+          "label": "Stated Net Pay (N)",
+          "value": "Rs.226,875",
+          "highlight": true,
+          "flagged": true
+        },
+        {
+          "label": "Discrepancy: N - (G - D)",
+          "value": "Rs.226,875 - Rs.68,752 = Rs.158,123 EXCESS",
+          "highlight": true,
+          "flagged": true
+        },
+        {
+          "label": "Verdict",
+          "value": "Net Pay exceeds Gross by Rs.158,123 after deductions \u2014 mathematically impossible. Net field independently altered.",
+          "highlight": true,
+          "flagged": true
+        }
+      ]
+    },
+    {
+      "document": "cheque",
+      "check_name": "figures_words_agreement",
+      "expected": 28800.0,
+      "actual": 120960.0,
+      "delta": 92160.0,
+      "passed": false,
+      "detail": "Cheque: figures Rs.120,960, words parse to Rs.28,800. MISMATCH Rs.92,160",
+      "formula_steps": [
+        {
+          "label": "Cheque: Amount in Figures (F)",
+          "value": "Rs.120,960",
+          "highlight": false
+        },
+        {
+          "label": "Cheque: Amount in Words (W)",
+          "value": "\"Twenty Eight Thousand Eight Hundred Only\"",
+          "highlight": false
+        },
+        {
+          "label": "Words to Numeric (W_num)",
+          "value": "Rs.28,800",
+          "highlight": false
+        },
+        {
+          "label": "Compliance: F = W_num",
+          "value": "Required per RBI Cheque Clearing Rules",
+          "highlight": false
+        },
+        {
+          "label": "Observed Ratio: F / W_num",
+          "value": "4.2x",
+          "highlight": true,
+          "flagged": true
+        },
+        {
+          "label": "Absolute Discrepancy: F - W_num",
+          "value": "Rs.92,160",
+          "highlight": true,
+          "flagged": true
+        },
+        {
+          "label": "Verdict",
+          "value": "Figures/Words mismatch \u2014 cheque is legally dishonourable under CTS-2010 Rule 8(f).",
+          "highlight": true,
+          "flagged": true
+        }
+      ]
+    }
+  ],
+  "plausibility_findings": [
+    {
+      "check_name": "applicant_working_age",
+      "documents_involved": [
+        "kyc"
+      ],
+      "ratio": 0.0,
+      "threshold": 0.0,
+      "passed": true,
+      "detail": "DOB year 1981, age 45. OK"
+    },
+    {
+      "check_name": "itr_plausibility_range",
+      "documents_involved": [
+        "itr"
+      ],
+      "ratio": 0.0,
+      "threshold": 0.0,
+      "passed": true,
+      "detail": "ITR Gross Rs.3,459,173. OK"
+    },
+    {
+      "check_name": "rent_to_income_ratio",
+      "documents_involved": [
+        "rent",
+        "salary"
+      ],
+      "ratio": 0.6999824015723898,
+      "threshold": 0.6,
+      "passed": false,
+      "detail": "Rent/Income = 70.0%. Exceeds 60% threshold by 10.0pp."
+    },
+    {
+      "check_name": "three_way_income_triangulation",
+      "documents_involved": [
+        "ITR gross",
+        "Salary annualised",
+        "Appointment CTC"
+      ],
+      "ratio": 0.7368422056826283,
+      "threshold": 0.15,
+      "passed": false,
+      "detail": "Income sources: ITR gross=Rs.3,459,173; Salary annualised=Rs.910,309; Appointment CTC=Rs.3,459,174. Spread: 73.7%. EXCEEDS 15% tolerance."
+    },
+    {
+      "check_name": "itr_vs_salary_income_gap",
+      "documents_involved": [
+        "itr",
+        "salary"
+      ],
+      "ratio": 2.8000003515291403,
+      "threshold": 0.5,
+      "passed": false,
+      "detail": "ITR Gross Rs.3,459,173 vs Annualized Salary Rs.910,309. Variance 280% (3.8x). Income inflation \u2014 ITR likely altered."
+    },
+    {
+      "check_name": "designation_cross_doc_mismatch",
+      "documents_involved": [
+        "salary",
+        "idcard"
+      ],
+      "ratio": 1.0,
+      "threshold": 1.0,
+      "passed": false,
+      "detail": "Designation mismatch: salary='Associate Consultant' vs idcard='Vice President' \u2014 one document is fabricated."
+    }
+  ],
+  "primary_evidence": [
+    {
+      "type": "math_failure",
+      "confidence": "HIGH (deterministic)",
+      "detail": "Salary: Gross Rs.75,859.05 - Deductions Rs.7,106.61 = expected Net Rs.68,752.44, got Rs.226,875.02. MISMATCH Rs.158,122.58",
+      "check": "gross_net_deduction_balance",
+      "document": "salary",
+      "documents": null,
+      "field": null,
+      "doc_a": null,
+      "doc_b": null,
+      "value_a": null,
+      "value_b": null
+    },
+    {
+      "type": "math_failure",
+      "confidence": "HIGH (deterministic)",
+      "detail": "Cheque: figures Rs.120,960, words parse to Rs.28,800. MISMATCH Rs.92,160",
+      "check": "figures_words_agreement",
+      "document": "cheque",
+      "documents": null,
+      "field": null,
+      "doc_a": null,
+      "doc_b": null,
+      "value_a": null,
+      "value_b": null
+    },
+    {
+      "type": "plausibility_failure",
+      "confidence": "HIGH (deterministic)",
+      "detail": "Rent/Income = 70.0%. Exceeds 60% threshold by 10.0pp.",
+      "check": "rent_to_income_ratio",
+      "document": null,
+      "documents": [
+        "rent",
+        "salary"
+      ],
+      "field": null,
+      "doc_a": null,
+      "doc_b": null,
+      "value_a": null,
+      "value_b": null
+    },
+    {
+      "type": "plausibility_failure",
+      "confidence": "HIGH (deterministic)",
+      "detail": "Income sources: ITR gross=Rs.3,459,173; Salary annualised=Rs.910,309; Appointment CTC=Rs.3,459,174. Spread: 73.7%. EXCEEDS 15% tolerance.",
+      "check": "three_way_income_triangulation",
+      "document": null,
+      "documents": [
+        "ITR gross",
+        "Salary annualised",
+        "Appointment CTC"
+      ],
+      "field": null,
+      "doc_a": null,
+      "doc_b": null,
+      "value_a": null,
+      "value_b": null
+    },
+    {
+      "type": "plausibility_failure",
+      "confidence": "HIGH (deterministic)",
+      "detail": "ITR Gross Rs.3,459,173 vs Annualized Salary Rs.910,309. Variance 280% (3.8x). Income inflation \u2014 ITR likely altered.",
+      "check": "itr_vs_salary_income_gap",
+      "document": null,
+      "documents": [
+        "itr",
+        "salary"
+      ],
+      "field": null,
+      "doc_a": null,
+      "doc_b": null,
+      "value_a": null,
+      "value_b": null
+    },
+    {
+      "type": "plausibility_failure",
+      "confidence": "HIGH (deterministic)",
+      "detail": "Designation mismatch: salary='Associate Consultant' vs idcard='Vice President' \u2014 one document is fabricated.",
+      "check": "designation_cross_doc_mismatch",
+      "document": null,
+      "documents": [
+        "salary",
+        "idcard"
+      ],
+      "field": null,
+      "doc_a": null,
+      "doc_b": null,
+      "value_a": null,
+      "value_b": null
+    },
+    {
+      "type": "cross_doc_mismatch",
+      "confidence": "low",
+      "detail": null,
+      "check": null,
+      "document": null,
+      "documents": null,
+      "field": "address",
+      "doc_a": "kyc",
+      "doc_b": "rent",
+      "value_a": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+      "value_b": "<UNVERIFIED>"
+    },
+    {
+      "type": "cross_doc_mismatch",
+      "confidence": "high",
+      "detail": null,
+      "check": null,
+      "document": null,
+      "documents": null,
+      "field": "designation",
+      "doc_a": "salary",
+      "doc_b": "idcard",
+      "value_a": "Associate Consultant",
+      "value_b": "Vice President"
+    },
+    {
+      "type": "cross_doc_mismatch",
+      "confidence": "high",
+      "detail": null,
+      "check": null,
+      "document": null,
+      "documents": null,
+      "field": "designation",
+      "doc_a": "appointment",
+      "doc_b": "idcard",
+      "value_a": "Associate Consultant",
+      "value_b": "Vice President"
+    },
+    {
+      "type": "cross_doc_mismatch",
+      "confidence": "low",
+      "detail": null,
+      "check": null,
+      "document": null,
+      "documents": null,
+      "field": "address",
+      "doc_a": "idcard",
+      "doc_b": "rent",
+      "value_a": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+      "value_b": "<UNVERIFIED>"
+    },
+    {
+      "type": "cross_doc_mismatch",
+      "confidence": "high",
+      "detail": null,
+      "check": null,
+      "document": null,
+      "documents": null,
+      "field": "plan_approval_no",
+      "doc_a": "plan_approval",
+      "doc_b": "occupancy_cert",
+      "value_a": "BF/7641/1/2023",
+      "value_b": "BP/3198/B/2023"
+    },
+    {
+      "type": "timeline_failure",
+      "confidence": "HIGH (deterministic)",
+      "detail": "Plan: 'BF/7641/1/2023', Occupancy: 'BP/3198/B/2023'",
+      "check": "sanction_plan_number_match",
+      "document": null,
+      "documents": null,
+      "field": null,
+      "doc_a": null,
+      "doc_b": null,
+      "value_a": null,
+      "value_b": null
+    }
+  ],
+  "logic_severity": 0.65,
+  "visual_model_probability": 0.0975,
+  "math_severity": 0.5,
+  "plausibility_severity": 0.6,
+  "mismatch_severity": 0.65,
+  "timeline_severity": 0.2,
+  "n_math_failures": 2,
+  "n_plausibility_failures": 4,
+  "n_cross_doc_mismatches": 5,
+  "n_timeline_failures": 1,
+  "clause_findings": [
+    {
+      "document": "rent",
+      "section": "all",
+      "check_name": "clause_extraction",
+      "passed": false,
+      "detail": "No clause text could be extracted from rent agreement.",
+      "confidence": 0.5
+    },
+    {
+      "document": "appointment",
+      "section": "all",
+      "check_name": "clause_extraction",
+      "passed": false,
+      "detail": "No clause text could be extracted from appointment letter.",
+      "confidence": 0.5
+    },
+    {
+      "document": "itr",
+      "section": "all",
+      "check_name": "schedule_extraction",
+      "passed": false,
+      "detail": "Only gross total income extracted, no schedule breakdown available.",
+      "confidence": 0.4
+    }
+  ],
+  "signature_findings": [
+    {
+      "document": "kyc",
+      "check_name": "signature_blurry",
+      "passed": false,
+      "detail": "Signature region has abnormally low sharpness (Laplacian variance=10.0). Blurry signatures often indicate copy-paste from another document.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "salary",
+      "check_name": "signature_blurry",
+      "passed": false,
+      "detail": "Signature region has abnormally low sharpness (Laplacian variance=6.9). Blurry signatures often indicate copy-paste from another document.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "appointment",
+      "check_name": "signature_blurry",
+      "passed": true,
+      "detail": "Signature sharpness normal (Laplacian variance=214.2).",
+      "confidence": 0.8,
+      "severity": "low"
+    },
+    {
+      "document": "idcard",
+      "check_name": "signature_blurry",
+      "passed": false,
+      "detail": "Signature region has abnormally low sharpness (Laplacian variance=25.2). Blurry signatures often indicate copy-paste from another document.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "itr",
+      "check_name": "signature_blurry",
+      "passed": true,
+      "detail": "Signature sharpness normal (Laplacian variance=312.4).",
+      "confidence": 0.8,
+      "severity": "low"
+    },
+    {
+      "document": "cheque",
+      "check_name": "signature_presence",
+      "passed": false,
+      "detail": "No signature region detected on cheque.",
+      "confidence": 0.6,
+      "severity": "high"
+    },
+    {
+      "document": "rent",
+      "check_name": "signature_blurry",
+      "passed": true,
+      "detail": "Signature sharpness normal (Laplacian variance=154.3).",
+      "confidence": 0.8,
+      "severity": "low"
+    },
+    {
+      "document": "legal_heir",
+      "check_name": "signature_blurry",
+      "passed": true,
+      "detail": "Signature sharpness normal (Laplacian variance=156.9).",
+      "confidence": 0.8,
+      "severity": "low"
+    },
+    {
+      "document": "death_certificate",
+      "check_name": "signature_presence",
+      "passed": false,
+      "detail": "No signature region detected on death_certificate.",
+      "confidence": 0.6,
+      "severity": "high"
+    },
+    {
+      "document": "plan_approval",
+      "check_name": "signature_presence",
+      "passed": false,
+      "detail": "No signature region detected on plan_approval.",
+      "confidence": 0.6,
+      "severity": "high"
+    },
+    {
+      "document": "occupancy_cert",
+      "check_name": "signature_blurry",
+      "passed": true,
+      "detail": "Signature sharpness normal (Laplacian variance=117.0).",
+      "confidence": 0.8,
+      "severity": "low"
+    },
+    {
+      "document": "kyc_vs_idcard",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between kyc and idcard (match score=0.196). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "kyc_vs_itr",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between kyc and itr (match score=-0.006). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "kyc_vs_rent",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between kyc and rent (match score=-0.049). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "kyc_vs_occupancy_cert",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between kyc and occupancy_cert (match score=0.086). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "salary_vs_appointment",
+      "check_name": "signature_copy_paste_suspicion",
+      "passed": false,
+      "detail": "Signature match score=0.755 between salary and appointment. High but not perfect \u2014 suggests copy-pasted signature with minor resizing or rotation.",
+      "confidence": 0.6,
+      "severity": "critical"
+    },
+    {
+      "document": "salary_vs_idcard",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between salary and idcard (match score=0.222). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "salary_vs_itr",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between salary and itr (match score=-0.006). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "salary_vs_rent",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between salary and rent (match score=-0.072). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "salary_vs_occupancy_cert",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between salary and occupancy_cert (match score=0.029). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "appointment_vs_itr",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between appointment and itr (match score=0.117). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "appointment_vs_rent",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between appointment and rent (match score=-0.064). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "appointment_vs_legal_heir",
+      "check_name": "signature_copy_paste_suspicion",
+      "passed": false,
+      "detail": "Signature match score=0.798 between appointment and legal_heir. High but not perfect \u2014 suggests copy-pasted signature with minor resizing or rotation.",
+      "confidence": 0.6,
+      "severity": "critical"
+    },
+    {
+      "document": "appointment_vs_occupancy_cert",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between appointment and occupancy_cert (match score=0.030). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "idcard_vs_itr",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between idcard and itr (match score=0.188). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "idcard_vs_rent",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between idcard and rent (match score=0.206). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "idcard_vs_occupancy_cert",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between idcard and occupancy_cert (match score=0.255). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "itr_vs_rent",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between itr and rent (match score=0.131). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "itr_vs_legal_heir",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between itr and legal_heir (match score=0.100). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "itr_vs_occupancy_cert",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between itr and occupancy_cert (match score=0.041). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "rent_vs_legal_heir",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between rent and legal_heir (match score=-0.037). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "rent_vs_occupancy_cert",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between rent and occupancy_cert (match score=0.068). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "legal_heir_vs_occupancy_cert",
+      "check_name": "signature_mismatch",
+      "passed": false,
+      "detail": "Signature mismatch between legal_heir and occupancy_cert (match score=0.085). Signatures on these documents appear to be from different persons.",
+      "confidence": 0.7,
+      "severity": "critical"
+    }
+  ],
+  "quality_findings": [
+    {
+      "document": "kyc",
+      "check_name": "global_blur_detected",
+      "passed": false,
+      "detail": "Document has below-average sharpness (Laplacian variance=46.3). May be a low-quality scan or mild defocus. Cross-verify with source submission method.",
+      "confidence": 0.5,
+      "severity": "medium"
+    },
+    {
+      "document": "kyc",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=2.84). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "kyc",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=3.093). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "salary",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=78.4).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "salary",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=4.04). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "salary",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=2.969). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "appointment",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=170.5).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "appointment",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=3.13). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "appointment",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=2.298). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "idcard",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=53.2).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "idcard",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=4.83). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "idcard",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=4.030). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "itr",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=163.5).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "itr",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=3.18). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "itr",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=2.684). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "cheque",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=134.5).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "cheque",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=3.36). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "cheque",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=2.340). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "rent",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=229.7).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "rent",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=2.72). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "rent",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=2.076). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "legal_heir",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=130.5).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "legal_heir",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=3.35). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "legal_heir",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=2.561). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "death_certificate",
+      "check_name": "global_blur_detected",
+      "passed": false,
+      "detail": "Document has below-average sharpness (Laplacian variance=42.4). May be a low-quality scan or mild defocus. Cross-verify with source submission method.",
+      "confidence": 0.5,
+      "severity": "medium"
+    },
+    {
+      "document": "death_certificate",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=3.91). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "death_certificate",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=3.536). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "plan_approval",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=100.3).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "plan_approval",
+      "check_name": "jpeg_block_artifact",
+      "passed": true,
+      "detail": "Mild block boundary artifacts (blockiness index=2.43). Within expected range for scanned documents.",
+      "confidence": 0.5,
+      "severity": "low"
+    },
+    {
+      "document": "plan_approval",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=2.609). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    },
+    {
+      "document": "occupancy_cert",
+      "check_name": "global_blur_detected",
+      "passed": true,
+      "detail": "Document sharpness normal (Laplacian variance=141.5).",
+      "confidence": 0.9,
+      "severity": "low"
+    },
+    {
+      "document": "occupancy_cert",
+      "check_name": "jpeg_block_artifact",
+      "passed": false,
+      "detail": "Strong 8x8 block boundary artifacts detected (blockiness index=3.17). Indicates heavy JPEG compression or multiple re-compression cycles. Consistent with document image downloaded from the web and re-saved.",
+      "confidence": 0.7,
+      "severity": "medium"
+    },
+    {
+      "document": "occupancy_cert",
+      "check_name": "noise_inconsistency",
+      "passed": false,
+      "detail": "Region-wise noise variance is highly inconsistent (CV=2.389). Suggests composite document assembled from multiple sources with different camera/scanner sensor noise profiles.",
+      "confidence": 0.7,
+      "severity": "critical"
+    }
+  ],
+  "micr_findings": [
+    {
+      "document": "cheque",
+      "check_name": "micr_font_spacing_anomaly",
+      "passed": false,
+      "detail": "MICR E-13B character spacing anomalies detected: pos 1: 1.0px (\u03c3=0.79); pos 2: 1.0px (\u03c3=0.79); pos 3: 1.0px (\u03c3=0.79); pos 4: 63.0px (\u03c3=12.48); pos 5: 1.0px (\u03c3=0.79). Baseline E-13B spacing is 3.6mm \u00b10.2mm. Irregular spacing indicates digital compositing rather than magnetic ink printing.",
+      "confidence": 0.75,
+      "severity": "critical"
+    },
+    {
+      "document": "cheque",
+      "check_name": "micr_amount_multiplier_anomaly",
+      "passed": false,
+      "detail": "Figures-vs-words discrepancy: \u20b9120,960 \u2260 \u20b928,800. One of the two amount representations is fabricated.",
+      "confidence": 0.9,
+      "severity": "critical"
+    }
+  ],
+  "metadata_forensics": [
+    {
+      "doc": "appointment",
+      "producer": "Microsoft Word",
+      "creator": "Microsoft Office Word 2016",
+      "severity": "CAUTION",
+      "reason": "Document producer 'microsoft word' is atypical for 'appointment' documents. Acceptable for internal memos but verify with issuing authority.",
+      "action": "Cross-verify document with issuing authority's standard format. Request official letterhead version if available.",
+      "editing_software_detected": false,
+      "flagged_software": null
+    }
+  ],
+  "n_signature_failures": 28,
+  "n_clause_failures": 3,
+  "n_quality_failures": 23,
+  "physical_tamper_findings": [
+    {
+      "check_type": "scribble_cross_out",
+      "document": "kyc",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "kyc",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "kyc",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "kyc",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "kyc",
+      "passed": false,
+      "detail": "Colored overlay (tape) detected at (874,2041) 527x525: hue=117 sat=51 cover=9.8% \u2014 possible DOB/field tampering",
+      "confidence": "high",
+      "region": [
+        874,
+        2041,
+        1401,
+        2566
+      ]
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "kyc",
+      "passed": false,
+      "detail": "Localized scribble detected at (900,2100) 150x150: 139 lines across 8 angle bins, score=4.0 \u2014 possible field tampering",
+      "confidence": "high",
+      "region": [
+        900,
+        2100,
+        1050,
+        2250
+      ]
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "salary",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "salary",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "salary",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "salary",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "salary",
+      "passed": false,
+      "detail": "Colored overlay (tape) detected at (1163,2080) 566x563: hue=117 sat=61 cover=14.3% \u2014 possible DOB/field tampering",
+      "confidence": "high",
+      "region": [
+        1163,
+        2080,
+        1729,
+        2643
+      ]
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "salary",
+      "passed": false,
+      "detail": "Localized scribble detected at (1500,2100) 150x150: 123 lines across 10 angle bins, score=4.2 \u2014 possible field tampering",
+      "confidence": "high",
+      "region": [
+        1500,
+        2100,
+        1650,
+        2250
+      ]
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "appointment",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "appointment",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "appointment",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "appointment",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "appointment",
+      "passed": false,
+      "detail": "Colored overlay (tape) detected at (1185,2226) 541x540: hue=118 sat=70 cover=15.8% \u2014 possible DOB/field tampering",
+      "confidence": "high",
+      "region": [
+        1185,
+        2226,
+        1726,
+        2766
+      ]
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "appointment",
+      "passed": false,
+      "detail": "Localized scribble detected at (1200,2550) 150x150: 127 lines across 9 angle bins, score=4.2 \u2014 possible field tampering",
+      "confidence": "high",
+      "region": [
+        1200,
+        2550,
+        1350,
+        2700
+      ]
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "idcard",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "idcard",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "idcard",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "idcard",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "idcard",
+      "passed": true,
+      "detail": "No colored overlay detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "idcard",
+      "passed": true,
+      "detail": "No localized scribble detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "itr",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "itr",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "itr",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "itr",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "itr",
+      "passed": true,
+      "detail": "No colored overlay detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "itr",
+      "passed": true,
+      "detail": "No localized scribble detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "cheque",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "cheque",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "cheque",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "cheque",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "cheque",
+      "passed": true,
+      "detail": "No colored overlay detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "cheque",
+      "passed": true,
+      "detail": "No localized scribble detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "rent",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "rent",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "rent",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "rent",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "rent",
+      "passed": true,
+      "detail": "No colored overlay detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "rent",
+      "passed": false,
+      "detail": "Localized scribble detected at (1500,300) 150x150: 71 lines across 9 angle bins, score=4.3 \u2014 possible field tampering",
+      "confidence": "high",
+      "region": [
+        1500,
+        300,
+        1650,
+        450
+      ]
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "legal_heir",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "legal_heir",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "legal_heir",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "legal_heir",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "legal_heir",
+      "passed": false,
+      "detail": "Colored overlay (tape) detected at (1044,2129) 515x514: hue=117 sat=62 cover=16.3% \u2014 possible DOB/field tampering",
+      "confidence": "high",
+      "region": [
+        1044,
+        2129,
+        1559,
+        2643
+      ]
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "legal_heir",
+      "passed": false,
+      "detail": "Localized scribble detected at (1050,2250) 150x150: 105 lines across 8 angle bins, score=4.1 \u2014 possible field tampering",
+      "confidence": "high",
+      "region": [
+        1050,
+        2250,
+        1200,
+        2400
+      ]
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "death_certificate",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "death_certificate",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "death_certificate",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "death_certificate",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "death_certificate",
+      "passed": true,
+      "detail": "No colored overlay detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "death_certificate",
+      "passed": true,
+      "detail": "No localized scribble detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "plan_approval",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "plan_approval",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "plan_approval",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "plan_approval",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "plan_approval",
+      "passed": true,
+      "detail": "No colored overlay detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "plan_approval",
+      "passed": false,
+      "detail": "Localized scribble detected at (1500,2250) 150x150: 128 lines across 9 angle bins, score=4.0 \u2014 possible field tampering",
+      "confidence": "high",
+      "region": [
+        1500,
+        2250,
+        1650,
+        2400
+      ]
+    },
+    {
+      "check_type": "scribble_cross_out",
+      "document": "occupancy_cert",
+      "passed": true,
+      "detail": "No scribble or cross-out lines detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "tape_occlusion",
+      "document": "occupancy_cert",
+      "passed": true,
+      "detail": "No tape occlusion pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "ink_spill",
+      "document": "occupancy_cert",
+      "passed": true,
+      "detail": "No ink spill/blotch pattern detected",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "signature_retrace",
+      "document": "occupancy_cert",
+      "passed": true,
+      "detail": "Signature ink density within normal range",
+      "confidence": "high",
+      "region": null
+    },
+    {
+      "check_type": "colored_overlay",
+      "document": "occupancy_cert",
+      "passed": false,
+      "detail": "Colored overlay (tape) detected at (1218,2218) 531x529: hue=117 sat=82 cover=20.8% \u2014 possible DOB/field tampering",
+      "confidence": "high",
+      "region": [
+        1218,
+        2218,
+        1749,
+        2747
+      ]
+    },
+    {
+      "check_type": "localized_scribble",
+      "document": "occupancy_cert",
+      "passed": false,
+      "detail": "Localized scribble detected at (1500,2250) 150x150: 172 lines across 8 angle bins, score=4.1 \u2014 possible field tampering",
+      "confidence": "high",
+      "region": [
+        1500,
+        2250,
+        1650,
+        2400
+      ]
+    }
+  ],
+  "date_forensic_findings": [],
+  "nri_forensic_findings": [
+    {
+      "check_type": "nri_income_extreme",
+      "passed": true,
+      "detail": "NRI monthly salary within typical range",
+      "confidence": "medium",
+      "doc_a": null,
+      "doc_b": null,
+      "val_a": null,
+      "val_b": null
+    },
+    {
+      "check_type": "nri_balance_swing",
+      "passed": true,
+      "detail": "NRI bank balance data not available for comparison",
+      "confidence": "low",
+      "doc_a": null,
+      "doc_b": null,
+      "val_a": null,
+      "val_b": null
+    },
+    {
+      "check_type": "nri_salary_bank_mismatch",
+      "passed": true,
+      "detail": "NRI salary/bank credit data not available for cross-check",
+      "confidence": "low",
+      "doc_a": null,
+      "doc_b": null,
+      "val_a": null,
+      "val_b": null
+    }
+  ],
+  "company_forensic_findings": [
+    {
+      "check_type": "ca_networth_turnover_ratio",
+      "passed": true,
+      "detail": "CA turnover/net worth data not available for comparison",
+      "confidence": "low",
+      "doc_a": null,
+      "doc_b": null,
+      "val_a": null,
+      "val_b": null
+    },
+    {
+      "check_type": "ca_udin_format",
+      "passed": true,
+      "detail": "UDIN not checked (field not available)",
+      "confidence": "low",
+      "doc_a": null,
+      "doc_b": null,
+      "val_a": null,
+      "val_b": null
+    },
+    {
+      "check_type": "roc_status_invalid",
+      "passed": true,
+      "detail": "ROC status not checked (field not available)",
+      "confidence": "low",
+      "doc_a": null,
+      "doc_b": null,
+      "val_a": null,
+      "val_b": null
+    }
+  ],
+  "property_forensic_findings": [
+    {
+      "check_type": "rera_format",
+      "passed": true,
+      "detail": "RERA number not available for validation",
+      "confidence": "low",
+      "doc_a": null,
+      "doc_b": null,
+      "val_a": null,
+      "val_b": null
+    },
+    {
+      "check_type": "builder_project_consistency",
+      "passed": true,
+      "detail": "Builder/promoter and project names consistent across property documents",
+      "confidence": "high",
+      "doc_a": null,
+      "doc_b": null,
+      "val_a": null,
+      "val_b": null
+    }
+  ],
+  "n_physical_tamper_failures": 12,
+  "n_date_failures": 0,
+  "n_nri_failures": 0,
+  "n_company_failures": 0,
+  "n_property_failures": 0
+}

@@ -1,0 +1,124 @@
+{
+  "persona_id": "P20260719-000032",
+  "fraudulent": true,
+  "technique": "tier_a_rent_deposit_inflation",
+  "techniques": [
+    "tier_a_rent_deposit_inflation"
+  ],
+  "edit_type": "partial_edit",
+  "cross_doc_mismatch": null,
+  "cross_doc_mismatches": [],
+  "outputs": {
+    "kyc_soft_copy": "dossier_000032_kyc_soft_copy.jpg",
+    "kyc_hard_copy": "dossier_000032_kyc_hard_copy.jpg",
+    "kyc_pdf": "dossier_000032_kyc.pdf",
+    "combined_pdf": "dossier_000032_combined.pdf",
+    "rent_soft_copy": "dossier_000032_rent_soft_copy.jpg",
+    "rent_hard_copy": "dossier_000032_rent_hard_copy.jpg",
+    "rent_pdf": "dossier_000032_rent.pdf"
+  },
+  "documents_rendered": [
+    "kyc",
+    "rent"
+  ],
+  "purpose": "mule_account",
+  "risk_label": "risked",
+  "use_case": "UC2_fabricated_mule_kyc",
+  "split": "test",
+  "id_card_meta": {},
+  "kyc_boxes": {
+    "photo": [
+      60,
+      150,
+      240,
+      370
+    ],
+    "full_name": [
+      280,
+      155,
+      780,
+      185
+    ],
+    "dob": [
+      280,
+      200,
+      480,
+      240
+    ],
+    "gender": [
+      480,
+      200,
+      630,
+      240
+    ],
+    "aadhaar": [
+      60,
+      440,
+      360,
+      480
+    ],
+    "pan": [
+      420,
+      440,
+      720,
+      480
+    ],
+    "address": [
+      60,
+      570,
+      860,
+      610
+    ],
+    "phone": [
+      60,
+      700,
+      360,
+      740
+    ],
+    "email": [
+      420,
+      700,
+      820,
+      740
+    ],
+    "stamp": [
+      400,
+      960,
+      660,
+      1220
+    ],
+    "signature": [
+      620,
+      980,
+      960,
+      1100
+    ]
+  },
+  "salary_boxes": {},
+  "cheque_boxes": {},
+  "nri_salary_boxes": {},
+  "nri_bank_boxes": {},
+  "rent_boxes": {
+    "landlord_signature": [
+      60,
+      1160,
+      440,
+      1310
+    ],
+    "tenant_signature": [
+      560,
+      1160,
+      940,
+      1310
+    ]
+  },
+  "legal_heir_boxes": {},
+  "plan_approval_boxes": {},
+  "oc_boxes": {},
+  "itr_boxes": {},
+  "rera_boxes": {},
+  "appointment_boxes": {},
+  "ca_boxes": {},
+  "roc_boxes": {},
+  "death_cert_boxes": {}
+}

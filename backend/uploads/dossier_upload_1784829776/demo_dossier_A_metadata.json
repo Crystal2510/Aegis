@@ -1,0 +1,167 @@
+{
+  "documents_rendered": [
+    "kyc",
+    "salary",
+    "appointment",
+    "idcard",
+    "itr",
+    "cheque",
+    "rent",
+    "legal_heir",
+    "death_certificate",
+    "plan_approval",
+    "occupancy_cert"
+  ],
+  "outputs": {
+    "kyc_soft_copy": "kyc.pdf",
+    "salary_soft_copy": "salary.pdf",
+    "appointment_soft_copy": "appointment.pdf",
+    "idcard_soft_copy": "idcard.pdf",
+    "itr_soft_copy": "itr.pdf",
+    "cheque_soft_copy": "cheque.pdf",
+    "rent_soft_copy": "rent.pdf",
+    "legal_heir_soft_copy": "legal_heir.pdf",
+    "death_certificate_soft_copy": "death_certificate.pdf",
+    "plan_approval_soft_copy": "plan_approval.pdf",
+    "occupancy_cert_soft_copy": "occupancy_cert.pdf"
+  },
+  "techniques": [
+    "Font Manipulation (Cheque MICR / Numeral Splicing)",
+    "Cross-Document Semantic Mismatch (Designation & Income Drift)",
+    "Intra-Document Mathematical Inconsistency (Cheque Figures vs Words)",
+    "PDF Container Metadata Poisoning (Adobe Photoshop CS6 Edit)",
+    "Timeline Anomaly (Death Certificate vs Legal Heir Date)",
+    "Salary Mathematical Impossibility (Net Pay Exceeds Gross)"
+  ],
+  "fraudulent": true,
+  "delivery_modes": {},
+  "ocr_overrides": {
+    "kyc": {
+      "full_name": "Siddharth Subramaniam",
+      "dob": "15/08/1988",
+      "gender": "Male",
+      "pan": "VVPPS9239K",
+      "aadhaar": "9921 4810 2938",
+      "address": "Flat 402, Green Acres, Bengaluru",
+      "phone": "9845012345",
+      "email": "siddharth.s@apextech.com"
+    },
+    "salary": {
+      "full_name": "Siddharth Subramaniam",
+      "pan": "VVPPS9239K",
+      "employer_name": "Apex Tech Solutions",
+      "designation": "Senior Software Engineer",
+      "employee_code": "EMP-88492",
+      "gross": "150000",
+      "net_pay": "185000",
+      "total_deductions": "15000",
+      "basic": "90000",
+      "hra": "36000",
+      "special_allowance": "24000",
+      "pf_deduction": "10800",
+      "tds_deduction": "4200",
+      "month": "June 2026"
+    },
+    "appointment": {
+      "full_name": "Siddharth Subramaniam",
+      "employer_name": "Apex Tech Solutions",
+      "designation": "Senior Software Engineer",
+      "employee_code": "EMP-88492",
+      "annual_ctc": "1800000",
+      "joining_date": "2019-03-15"
+    },
+    "idcard": {
+      "full_name": "Siddharth Subramaniam",
+      "employer_name": "Apex Tech Solutions",
+      "designation": "Vice President",
+      "employee_code": "EMP-88492",
+      "address": "Flat 402, Green Acres, Bengaluru"
+    },
+    "itr": {
+      "full_name": "Siddharth Subramaniam",
+      "pan": "VVPPS9239K",
+      "gross_total_income": "4500000",
+      "acknowledgement_number": "882910394821",
+      "assessment_year": "2025-26",
+      "filing_date": "2025-07-31",
+      "tax_payable": "875000"
+    },
+    "cheque": {
+      "full_name": "Siddharth Subramaniam",
+      "account_holder_name": "Siddharth Subramaniam",
+      "account_number": "918234710293",
+      "amount_figures": "500000",
+      "amount_words": "Fifty Thousand Only",
+      "cheque_number": "004821",
+      "bank_name": "State Bank of India",
+      "micr_code": "560002015",
+      "ifsc_code": "SBIN0015123",
+      "date": "18/07/2026"
+    },
+    "rent": {
+      "tenant_name": "Siddharth Subramaniam",
+      "landlord_name": "Priya Krishnamurthy",
+      "monthly_rent": "35000",
+      "property_address": "Flat 402, Green Acres, Bengaluru",
+      "lease_start": "2024-01-01",
+      "lease_end": "2026-12-31",
+      "full_name": "Siddharth Subramaniam"
+    },
+    "legal_heir": {
+      "full_name": "Siddharth Subramaniam",
+      "deceased_name": "Ramanathan Subramaniam",
+      "date_of_death": "12/05/2022",
+      "certificate_number": "LHC/2022/1049",
+      "death_place": "Bengaluru",
+      "applicant_name": "Siddharth Subramaniam"
+    },
+    "death_certificate": {
+      "deceased_name": "Ramanathan Subramaniam",
+      "date_of_death": "12/05/2019",
+      "registration_number": "DC/2019/8839",
+      "death_place": "Bengaluru",
+      "applicant_name": "Siddharth Subramaniam",
+      "registration_date": "20/05/2019",
+      "deceased_gender": "Male"
+    },
+    "plan_approval": {
+      "project_name": "Green Acres Phase II",
+      "builder_name": "Apex Infra Developers",
+      "flat_no": "Flat 402",
+      "plan_approval_no": "PA-BANG-2020-994",
+      "sanction_date": "2020-08-15",
+      "project_address": "Koramangala, Bengaluru - 560034",
+      "applicant_name": "Siddharth Subramaniam"
+    },
+    "occupancy_cert": {
+      "project_name": "Green Acres Phase II",
+      "builder_name": "Apex Infra Developers",
+      "flat_no": "Flat 402",
+      "plan_approval_no": "PA-BANG-2020-994",
+      "completion_date": "2022-03-10",
+      "project_address": "Koramangala, Bengaluru - 560034",
+      "applicant_name": "Siddharth Subramaniam",
+      "oc_no": "OC/BBMP/2022/5521"
+    }
+  },
+  "metadata_overrides": {
+    "salary": {
+      "producer": "Adobe Photoshop CS6",
+      "creator": "Adobe Photoshop CS6",
+      "severity": "CRITICAL",
+      "reason": "Adobe Photoshop is a raster image editor, never used to generate financial instruments or official documents. Bank documents, salary slips, and legal certificates are produced by secure printing presses, payroll software, or government portals — not designed in Photoshop. This signature confirms the document was digitally fabricated as an image file.",
+      "action": "Reject document. Contact issuing authority to verify authenticity through official channels.",
+      "editing_software_detected": true,
+      "flagged_software": "Adobe Photoshop CS6"
+    },
+    "cheque": {
+      "producer": "Canva",
+      "creator": "Canva",
+      "severity": "HIGH",
+      "reason": "Canva is a consumer graphic design web application primarily used for social media posts and marketing materials. Legitimate payroll software (SAP HCM, ADP, Keka HR, Darwinbox) and government portals never export to Canva format. The document was designed using Canva templates rather than generated by an authorized system.",
+      "action": "Reject document. Request official document directly from the issuing organization or verify through government portal.",
+      "editing_software_detected": true,
+      "flagged_software": "Canva"
+    }
+  }
+}

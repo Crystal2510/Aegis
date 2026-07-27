@@ -1,0 +1,12 @@
+{
+  "persona_id": "UPLOAD-1784866410",
+  "fraudulent": false,
+  "techniques": [],
+  "outputs": {
+    "kyc_soft_copy": "kyc.pdf"
+  },
+  "documents_rendered": [
+    "kyc"
+  ],
+  "purpose": "Single Document Upload"
+}

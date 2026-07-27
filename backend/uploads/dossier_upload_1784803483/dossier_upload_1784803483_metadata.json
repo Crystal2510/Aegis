@@ -1,0 +1,16 @@
+{
+  "persona_id": "dossier_upload_1784803483",
+  "fraudulent": false,
+  "techniques": [],
+  "outputs": {
+    "kyc_soft_copy": "kyc.jpg",
+    "nri_bank_soft_copy": "nri_bank.jpg",
+    "salary_soft_copy": "salary.jpg"
+  },
+  "documents_rendered": [
+    "kyc",
+    "nri_bank",
+    "salary"
+  ],
+  "purpose": "Folder Upload"
+}

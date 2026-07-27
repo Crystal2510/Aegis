@@ -1,0 +1,136 @@
+{
+  "persona_id": "P20260719-000002",
+  "fraudulent": true,
+  "technique": "tier_a_nri_employer_swap",
+  "techniques": [
+    "tier_a_nri_employer_swap"
+  ],
+  "edit_type": "partial_edit",
+  "cross_doc_mismatch": {
+    "field": "employer_name",
+    "doc_a": "nri_salary_certificate",
+    "doc_b": "nri_bank_statement",
+    "real_value": "Sharaf Group LLC",
+    "forged_value": "Emirates Logistics FZE"
+  },
+  "cross_doc_mismatches": [
+    {
+      "field": "employer_name",
+      "doc_a": "nri_salary_certificate",
+      "doc_b": "nri_bank_statement",
+      "real_value": "Sharaf Group LLC",
+      "forged_value": "Emirates Logistics FZE"
+    }
+  ],
+  "outputs": {
+    "kyc_soft_copy": "dossier_000002_kyc_soft_copy.jpg",
+    "kyc_hard_copy": "dossier_000002_kyc_hard_copy.jpg",
+    "kyc_pdf": "dossier_000002_kyc.pdf",
+    "combined_pdf": "dossier_000002_combined.pdf",
+    "nri_salary_soft_copy": "dossier_000002_nri_salary_soft_copy.jpg",
+    "nri_salary_hard_copy": "dossier_000002_nri_salary_hard_copy.jpg",
+    "nri_salary_pdf": "dossier_000002_nri_salary.pdf",
+    "nri_bank_soft_copy": "dossier_000002_nri_bank_soft_copy.jpg",
+    "nri_bank_hard_copy": "dossier_000002_nri_bank_hard_copy.jpg",
+    "nri_bank_pdf": "dossier_000002_nri_bank.pdf"
+  },
+  "documents_rendered": [
+    "kyc",
+    "nri_salary",
+    "nri_bank"
+  ],
+  "purpose": "nri_account",
+  "risk_label": "risked",
+  "use_case": "other",
+  "split": "train",
+  "id_card_meta": {},
+  "kyc_boxes": {
+    "photo": [
+      60,
+      150,
+      240,
+      370
+    ],
+    "full_name": [
+      280,
+      155,
+      780,
+      185
+    ],
+    "dob": [
+      280,
+      200,
+      480,
+      240
+    ],
+    "gender": [
+      480,
+      200,
+      630,
+      240
+    ],
+    "aadhaar": [
+      60,
+      440,
+      360,
+      480
+    ],
+    "pan": [
+      420,
+      440,
+      720,
+      480
+    ],
+    "address": [
+      60,
+      570,
+      860,
+      610
+    ],
+    "phone": [
+      60,
+      700,
+      360,
+      740
+    ],
+    "email": [
+      420,
+      700,
+      820,
+      740
+    ],
+    "stamp": [
+      400,
+      960,
+      660,
+      1220
+    ],
+    "signature": [
+      620,
+      980,
+      960,
+      1100
+    ]
+  },
+  "salary_boxes": {},
+  "cheque_boxes": {},
+  "nri_salary_boxes": {
+    "hr_signature": [
+      560,
+      1055,
+      940,
+      1235
+    ]
+  },
+  "nri_bank_boxes": {},
+  "rent_boxes": {},
+  "legal_heir_boxes": {},
+  "plan_approval_boxes": {},
+  "oc_boxes": {},
+  "itr_boxes": {},
+  "rera_boxes": {},
+  "appointment_boxes": {},
+  "ca_boxes": {},
+  "roc_boxes": {},
+  "death_cert_boxes": {}
+}

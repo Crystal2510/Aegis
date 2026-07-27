@@ -1,0 +1,22 @@
+[Aegis v2] Initializing database...
+[Aegis v2] Loading model checkpoint...
+[InferenceEngine] loaded best_model.pt (b0, 7,786,729 params)
+[Aegis v2] Ready.
+INFO:     127.0.0.1:52047 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56155 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53204 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49294 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62782 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52724 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56776 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56224 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55645 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54961 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49781 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60501 - "GET /dossiers/dossier_upload_1784854674/image/kyc/soft_copy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59949 - "GET /dossiers/dossier_upload_1784854674/image/salary/soft_copy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64231 - "GET /dossiers/dossier_upload_1784854674/image/occupancy_cert/soft_copy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49434 - "GET /dossiers/dossier_upload_1784854674/image/rent/soft_copy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55380 - "GET /dossiers/dossier_upload_1784854674/image/idcard/soft_copy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54285 - "GET /dossiers/dossier_upload_1784854674/image/appointment/soft_copy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60501 - "GET /dossiers/dossier_upload_1784854674/image/legal_heir/soft_copy HTTP/1.1" 200 OK

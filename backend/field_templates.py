@@ -1,0 +1,148 @@
+"""
+field_templates.py (v2 -- same as v1, unchanged)
+"""
+
+FIELD_TEMPLATES = {
+    "kyc": {
+        "full_name": ("PHOTOGRAPH", "right"),
+        "dob": ("Date of Birth", "below"),
+        "gender": ("Gender", "below"),
+        "aadhaar": ("Aadhaar Number", "below"),
+        "pan": ("PAN", "below"),
+        "address": ("Registered Address", "below"),
+        "phone": ("Mobile Number", "below"),
+        "email": ("Email", "below"),
+    },
+    "salary": {
+        "full_name": ("Employee Name", "below"),
+        "employee_code": ("Employee Code", "below"),
+        "designation": ("Designation", "below"),
+        "pan": ("PAN", "below"),
+        "net_pay": ("NET PAY", "right"),
+        "gross": ("GROSS PAY", "right"),
+        "total_deductions": ("TOTAL DEDUCTIONS", "right"),
+    },
+    "cheque": {
+        "account_holder_name": ("Account Holder", "right"),
+        "account_number": ("Account No", "right"),
+        "amount_words": ("Rupees", "right"),
+    },
+    "itr": {
+        "full_name": ("Name", "right"),
+        "pan": ("PAN", "right"),
+        "acknowledgement_number": ("e-Filing Acknowledgement Number", "right"),
+        "gross_total_income": ("Gross Total Income (Rs.)", "right"),
+    },
+    "rent": {
+        "tenant_name": ("TENANT", "below"),
+        "landlord_name": ("LANDLORD", "below"),
+        "monthly_rent": ("RENT:", "right"),
+    },
+    "appointment": {
+        "full_name": ("To,", "below"),
+        "employee_code": ("Employee Code", "right"),
+        "designation": ("as", "right"),
+        "annual_ctc": ("Total Annual CTC", "right"),
+    },
+    "idcard": {
+        "full_name": ("Name", "below"),
+        "designation": ("Designation", "below"),
+        "employee_code": ("Employee Code", "below"),
+    },
+    "plan_approval": {
+        "applicant_name": ("allotted to", "right"),
+        "plan_approval_no": ("Sanction No:", "right"),
+        "sanction_date": ("Date of Sanction:", "right"),
+        "project_name": ("construction at", "right"),
+        "builder_name": ("submitted by", "right"),
+        "project_address": ("Project Address:", "right"),
+        "flat_no": ("Flat No.", "right"),
+    },
+    "occupancy_cert": {
+        "applicant_name": ("allotted to", "right"),
+        "oc_no": ("OC No:", "right"),
+        "plan_approval_no": ("Sanction No.", "right"),
+        "completion_date": ("Date of Completion:", "right"),
+        "project_name": ("at", "right"),
+        "builder_name": ("constructed by", "right"),
+        "project_address": ("Project Address:", "right"),
+        "flat_no": ("Flat No.", "right"),
+    },
+    "ca_certificate": {
+        "company_name": ("records of", "right"),
+        "cin": ("CIN:", "right"),
+        "company_pan": ("PAN:", "right"),
+        "gstin": ("GSTIN:", "right"),
+        "turnover": ("Annual Turnover (Rs.)", "right"),
+        "net_worth": ("Net Worth (Rs.)", "right"),
+        "udin": ("UDIN:", "right"),
+    },
+    "roc_certificate": {
+        "company_name": ("Company Name", "right"),
+        "cin": ("CIN", "right"),
+        "company_pan": ("Company PAN", "right"),
+        "incorporation_date": ("Date of Incorporation", "right"),
+        "company_status": ("Company Status", "right"),
+        "authorized_capital": ("Authorized Capital (Rs.)", "right"),
+        "paid_up_capital": ("Paid-up Capital (Rs.)", "right"),
+        "full_name": ("DIN", "below"),
+    },
+    "nri_salary": {
+        "full_name": ("to certify that", "right"),
+        "employer_name": ("employed with", "right"),
+        "monthly_salary_foreign": ("Monthly Gross Salary", "right"),
+        "annual_salary_foreign": ("Annual Gross Salary", "right"),
+        "designation": ("serving as", "right"),
+        "passport_no": ("Passport No", "right"),
+        "labour_card_no": ("Labour Card No", "right"),
+        "joining_date": ("since", "right"),
+    },
+    "nri_bank": {
+        "full_name": ("Account Holder:", "right"),
+        "employer_name": ("SALARY CREDIT", "right"),
+        "iban_masked": ("IBAN:", "right"),
+        "opening_balance": ("Opening Balance", "right"),
+        "closing_balance": ("Closing Balance", "right"),
+        "salary_credit_row": ("Salary Credit", "right"),
+    },
+    "death_certificate": {
+        "registration_number": ("Registration No:", "right"),
+        "deceased_name": ("Name of Deceased", "right"),
+        "deceased_gender": ("Sex", "right"),
+        "deceased_dob": ("Date of Birth", "right"),
+        "date_of_death": ("Date of Death", "right"),
+        "death_place": ("Place of Death", "right"),
+        "father_or_husband_name": ("Father's / Husband's Name", "right"),
+        "registration_date": ("Date of Registration", "right"),
+        "applicant_name": ("application of", "right"),
+    },
+    "legal_heir": {
+        "certificate_number": ("Certificate No:", "right"),
+        "deceased_name": ("certify that", "right"),
+        "date_of_death": ("died on", "right"),
+        "death_place": ("at", "right"),
+        "applicant_name": ("application of", "right"),
+    },
+    "rera": {
+        "rera_number": ("Registration Number:", "right"),
+        "project_name": ("Project Name:", "right"),
+        "project_address": ("Project Address:", "right"),
+        "promoter_name": ("Promoter:", "right"),
+        "completion_date": ("Proposed Completion Date:", "right"),
+        "registration_status": ("STATUS:", "right"),
+    },
+}
+
+KNOWN_LABELS_EXTRA = {
+    "itr": ["Form Number", "Assessment Year", "Date of Filing", "Total Taxable Income (Rs.)",
+            "Total Tax Liability (Rs.)", "Taxes Paid / TDS (Rs.)", "Total Deductions (Rs.)"],
+    "kyc": ["Nationality"],
+    "salary": ["Earnings", "Deductions", "TOTAL DEDUCTIONS", "Pay Period", "GROSS PAY", "NET PAY"],
+    "roc_certificate": ["Form", "Purpose", "Filed On", "Status", "DIN", "Name", "Designation",
+                        "COMPANY DETAILS", "DIRECTOR(S) DETAILS", "ANNUAL FILING STATUS"],
+    "rera": ["STATUS:", "TERMS AND CONDITIONS OF REGISTRATION:"],
+    "ca_certificate": ["Chartered Accountants", "Membership No.", "FRN", "Financial Year"],
+}
+
+from ocr_extract import _register_all_labels
+_register_all_labels(FIELD_TEMPLATES, KNOWN_LABELS_EXTRA)

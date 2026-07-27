@@ -1,0 +1,26 @@
+{
+  "persona_id": "dossier_upload_1784828125",
+  "fraudulent": false,
+  "techniques": [],
+  "outputs": {
+    "cheque_soft_copy": "cheque.jpg",
+    "plan_approval_soft_copy": "plan_approval.jpg",
+    "salary_soft_copy": "salary.jpg",
+    "itr_soft_copy": "itr.jpg",
+    "idcard_soft_copy": "idcard.jpg",
+    "occupancy_cert_soft_copy": "occupancy_cert.jpg",
+    "kyc_soft_copy": "kyc.jpg",
+    "appointment_soft_copy": "appointment.jpg"
+  },
+  "documents_rendered": [
+    "cheque",
+    "plan_approval",
+    "salary",
+    "itr",
+    "idcard",
+    "occupancy_cert",
+    "kyc",
+    "appointment"
+  ],
+  "purpose": "Folder Upload"
+}

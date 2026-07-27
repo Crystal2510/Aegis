@@ -1,0 +1,148 @@
+{
+  "documents_rendered": [
+    "kyc",
+    "salary",
+    "appointment",
+    "idcard",
+    "itr",
+    "cheque",
+    "rent",
+    "legal_heir",
+    "death_certificate",
+    "plan_approval",
+    "occupancy_cert"
+  ],
+  "outputs": {
+    "kyc_soft_copy": "kyc.pdf",
+    "salary_soft_copy": "salary.pdf",
+    "appointment_soft_copy": "appointment.pdf",
+    "idcard_soft_copy": "idcard.pdf",
+    "itr_soft_copy": "itr.pdf",
+    "cheque_soft_copy": "cheque.pdf",
+    "rent_soft_copy": "rent.pdf",
+    "legal_heir_soft_copy": "legal_heir.pdf",
+    "death_certificate_soft_copy": "death_certificate.pdf",
+    "plan_approval_soft_copy": "plan_approval.pdf",
+    "occupancy_cert_soft_copy": "occupancy_cert.pdf"
+  },
+  "techniques": [
+    "Cross-Document Semantic Mismatch (Designation Drift — ID Card vs Salary/Appointment)",
+    "Salary Mathematical Impossibility (Net Pay Exceeds Gross by 3x)",
+    "Cheque Figures vs Words Mismatch (4.2x Inflation — Numeral Splicing)",
+    "Cross-Document Address Mismatch (KYC/ID Card vs Rent Agreement)",
+    "ITR vs Salary Income Discrepancy (3.8x — Possible Income Inflation)",
+    "Rent-to-Income Ratio Anomaly (70% — Exceeds 50% Threshold)"
+  ],
+  "fraudulent": true,
+  "delivery_modes": {},
+  "ocr_overrides": {
+    "kyc": {
+      "full_name": "Siddharth Subramaniam",
+      "dob": "1981-03-03",
+      "gender": "Male",
+      "pan": "VVPPS9239K",
+      "aadhaar": "",
+      "address": "Flat 351, MG Road, Kalaburagi, Karnataka 585101",
+      "phone": "9870191075",
+      "email": "siddharth subramaniam@yahoo.com"
+    },
+    "salary": {
+      "full_name": "Siddharth Subramaniam",
+      "pan": "VVPPS9239K",
+      "employer_name": "ICICI Lombard",
+      "designation": "Associate Consultant",
+      "employee_code": "EMPB6965C",
+      "gross": "75859.05",
+      "net_pay": "226875.02",
+      "total_deductions": "7106.61",
+      "basic": "40560.58",
+      "hra": "20280.29",
+      "special_allowance": "2039.34",
+      "pf_deduction": "4867.27",
+      "tds_deduction": "8112.12",
+      "month": "July 2026"
+    },
+    "appointment": {
+      "full_name": "Siddharth Subramaniam",
+      "employer_name": "ICICI Lombard",
+      "designation": "Associate Consultant",
+      "employee_code": "EMPB6965C",
+      "annual_ctc": "3459174",
+      "joining_date": "2022-12-10"
+    },
+    "idcard": {
+      "full_name": "Siddharth Subramaniam",
+      "employer_name": "ICICI Lombard",
+      "designation": "Vice President",
+      "employee_code": "EMPB6965C",
+      "address": "Flat 351, MG Road, Kalaburagi, Karnataka 585101"
+    },
+    "itr": {
+      "full_name": "Siddharth Subramaniam",
+      "pan": "VVPPS9239K",
+      "gross_total_income": "3459173",
+      "acknowledgement_number": "122154559047509",
+      "assessment_year": "2026-27",
+      "filing_date": "2026-04-28",
+      "tax_payable": "0"
+    },
+    "cheque": {
+      "full_name": "Siddharth Subramaniam",
+      "account_holder_name": "Siddharth Subramaniam",
+      "account_number": "003117312199",
+      "amount_figures": "120960",
+      "amount_words": "Twenty Eight Thousand Eight Hundred Only",
+      "cheque_number": "523047",
+      "bank_name": "Punjab National Bank",
+      "micr_code": "",
+      "ifsc_code": "PUNBOLASOLG",
+      "date": "20/09/2026"
+    },
+    "rent": {
+      "tenant_name": "Siddharth Subramaniam",
+      "landlord_name": "Ashok Deshmukh",
+      "monthly_rent": "53100",
+      "property_address": "Flat 12, Marine Drive, Mumbai, Maharashtra 400002",
+      "lease_start": "2026-07-22",
+      "lease_end": "2027-06-22",
+      "full_name": "Siddharth Subramaniam"
+    },
+    "legal_heir": {
+      "full_name": "Siddharth Subramaniam",
+      "deceased_name": "Pooja Subramaniam",
+      "date_of_death": "24-Oct-2024",
+      "certificate_number": "LIIC/4541081",
+      "death_place": "Lucknow",
+      "applicant_name": "Siddharth Subramaniam"
+    },
+    "death_certificate": {
+      "deceased_name": "Pooja Subramaniam",
+      "date_of_death": "24-Oct-2024",
+      "registration_number": "L/2024/9146",
+      "death_place": "Lucknow",
+      "applicant_name": "Siddharth Subramaniam",
+      "registration_date": "03-Nov-2024",
+      "deceased_gender": "Female"
+    },
+    "plan_approval": {
+      "project_name": "Golden Meadows",
+      "builder_name": "Sahyadri Constructions",
+      "flat_no": "B-215",
+      "plan_approval_no": "BF/7641/1/2023",
+      "sanction_date": "2023-09-12",
+      "project_address": "S.No. 48/1, Golden Meadows, Bengaluru, Karnataka 560103",
+      "applicant_name": "Siddharth Subramaniam"
+    },
+    "occupancy_cert": {
+      "project_name": "Golden Meadows",
+      "builder_name": "Sahyadri Constructions",
+      "flat_no": "B-215",
+      "plan_approval_no": "BP/3198/B/2023",
+      "completion_date": "2025-09-11",
+      "project_address": "S.No. 48/1, Golden Meadows, Bengaluru, Karnataka 560103",
+      "applicant_name": "Siddharth Subramaniam",
+      "oc_no": "OC/7791/2026"
+    }
+  },
+  "metadata_overrides": {}
+}

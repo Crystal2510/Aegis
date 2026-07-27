@@ -1,0 +1,22 @@
+{
+  "persona_id": "dossier_upload_1784807255",
+  "fraudulent": false,
+  "techniques": [],
+  "outputs": {
+    "occupancy_cert_soft_copy": "occupancy_cert.jpg",
+    "plan_approval_soft_copy": "plan_approval.jpg",
+    "itr_soft_copy": "itr.jpg",
+    "cheque_soft_copy": "cheque.jpg",
+    "ca_certificate_soft_copy": "ca_certificate.jpg",
+    "kyc_soft_copy": "kyc.jpg"
+  },
+  "documents_rendered": [
+    "occupancy_cert",
+    "plan_approval",
+    "itr",
+    "cheque",
+    "ca_certificate",
+    "kyc"
+  ],
+  "purpose": "Folder Upload"
+}
