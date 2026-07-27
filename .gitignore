@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Logs
+*.log
+
+# Database
+*.db
+
+# Numpy cache
+*.npy
+
+# Uploads & generated data
+backend/uploads/
+backend/masks/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
