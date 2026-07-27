@@ -27,3 +27,26 @@ backend/masks/
 # OS
 .DS_Store
 Thumbs.db
+
+# Model checkpoints
+checkpoints/
+*.pt
+*.pth
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Logs
+*.log
+
+# Database
+*.db
+
+# Generated data
+backend/uploads/
+backend/masks/
